@@ -2227,10 +2227,10 @@ input, select, textarea {
 /* Copyright */
 
 	#copyright {
-		border-top: solid 2px #e5e5e5;
+		/*border-top: solid 2px #e5e5e5;*/
 		text-align: center;
-		margin-top: 2em;
-		padding-top: 2em;
+		/*margin-top: 2em;
+		padding-top: 2em;*/
 	}
 
 /* XLarge */
@@ -2320,8 +2320,8 @@ input, select, textarea {
 		/* Copyright */
 
 			#copyright {
-				margin-top: 2em;
-				padding-top: 2em;
+				/*margin-top: 2em;
+				padding-top: 2em;*/
 			}
 
 	}
@@ -2562,6 +2562,10 @@ input, select, textarea {
 
 			.image.right {
 				max-width: 35%;
+			}
+			
+			.image.portrait {
+				width: 50%;
 			}
 
 		/* Button */
