@@ -1601,6 +1601,12 @@ input, select, textarea {
 			ul.actions li:first-child {
 				margin-left: 0;
 			}
+			
+			ul.actions.centered li {
+			margin: auto;
+			padding: 10px;
+			border: 20px black;
+			}
 
 /* Divided */
 
@@ -1800,6 +1806,9 @@ input, select, textarea {
 			padding-right: 0.75em;
 			opacity: 0.5;
 			top: 0.05em;
+		}
+		.button.centered {
+			margin: auto;
 		}
 
 		input[type="button"]:hover,
