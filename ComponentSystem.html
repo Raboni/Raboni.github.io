@@ -63,24 +63,39 @@
 							<header>
 								<h2>Component System</h2>
 							</header>
+							
 							<div class="divide"></div>
-							<span class="image left"><img class="myImg" src="images/AbilitySystemUpdate.png" alt="" /></span>
+							<div class="left">
+								<span class="image left"><img class="myImg" src="images/ComponentSystemStructs.png" alt="" /></span>
+								<span class="image left"><img class="myImg" src="images/ComponentSystemFunctions.png" alt="" /></span>
+								<span class="image left"><img class="myImg" src="images/ComponentSystemCreation.png" alt="" /></span>
+								<span class="image left"><img class="myImg" src="images/ComponentSystemMembers.png" alt="" /></span>
+								<span class="image left"><img class="myImg" src="images/ComponentSystemPostMaster.png" alt="" /></span>
+								<span class="image left"><img class="myImg" src="images/ComponentSystemUpdate.png" alt="" /></span>
+							</div>
 							<h3>Structure</h3>
 							<p>When I decided to make a component system I knew only that I wanted a single array of components, and that I wanted objectIDs rather than an object class.<br/>
 							It took a couple of days to figure out how I wanted the structure and how I would make it, but after I figured out how it only took a couple more days until it was ready to be used.<br/>
 							The system consists of the manager, the post master and components.
 							At first the manager only had two things, one big chunk of data containing the components, and a list of info about each component type.
-							The type info is used to parse the data in order to use any components inside.</p>
+							The type info is used to parse the data in order to use any components inside. Now the manager also handles the objectIDs, has more features and is much more user freindly.<br/>
+							The reason I made a post master was to not search through all components of it's type whenever a component is activated, deactivated, added or released.
+							I later added an array for every object containing the type and index of components added to the object,
+							and therefore I could probably now replace ReceiveMessage with OnActivate, OnDeactivate, etc.</p>
+							
 							<div class="divide"></div>
-							<span class="image right"><img class="myImg" src="images/AbilitySystemUpdate.png" alt="" /></span>
+							<span class="image right"><img class="myImg" src="images/Component.png" alt="" /></span>
 							<h3>Components</h3>
-							<p>Text.</p>
+							<p>All components are derived from the component base class, and should never be created by anyone other than a ComponentManager.
+							The base class contains its component ID, its objects ID, if it's active or not and a proxy for the ComponentManager that created it.</p>
+							
 							<div class="divide"></div>
-							<span class="image left"><img class="myImg" src="images/AbilitySystemUpdate.png" alt="" /></span>
+							<span class="image left"><img class="myImg" src="images/ComponentSystemFunctions.png" alt="" /></span>
 							<h3>User Experience</h3>
 							<p>Text.</p>
+							
 							<div class="divide"></div>
-							<span class="image right"><img class="myImg" src="images/AbilitySystemUpdate.png" alt="" /></span>
+							<span class="image right"><img class="myImg" src="images/Component.png" alt="" /></span>
 							<h3>Prefabs</h3>
 							<p>Text.</p>
 						</article>

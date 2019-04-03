@@ -1521,21 +1521,32 @@ input, select, textarea {
 			width: 100%;
 			margin: 0 0 3.5em 0;
 		}
-
-		.image.left {
+		
+		.left {
 			float: left;
 			margin: 0 1.5em 1.5em 0;
 			position: relative;
 			top: 0.5em;
-			max-width: 50%;
+			width: 50%;
 		}
-		
-		.image.right {
+		.right {
 			float: right;
 			margin: 0 0 1.5em 1.5em;
 			position: relative;
 			top: 0.5em;
-			max-width: 50%;
+			width: 50%;
+		}
+		
+		.image.left {
+			float: left;
+			margin: 2%;
+			width: 46%;
+		}
+		
+		.image.right {
+			float: right;
+			margin: 2%;
+			width: 46%;
 		}
 
 		.image.centered {
@@ -2297,13 +2308,13 @@ input, select, textarea {
 
 		/* Image */
 
-			.image.left {
-				max-width: 50%;
+			/*.image.left {
+				width: 40%;
 			}
 
 			.image.right {
-				max-width: 50%;
-			}
+				width: 40%;
+			}*/
 
 		/* Header */
 
@@ -2592,13 +2603,13 @@ input, select, textarea {
 				margin: 0 0 1.5em 0;
 			}
 
-			.image.left {
-				max-width: 30%;
+			/*.image.left {
+				width: 30%;
 			}
 
 			.image.right {
-				max-width: 30%;
-			}
+				width: 30%;
+			}*/
 			
 			.image.portrait {
 				width: 50%;
