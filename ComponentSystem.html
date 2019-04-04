@@ -31,18 +31,17 @@
 								<ul>
 									<li><a href="ohtili">Ohtili's Ascension</a></li>
 									<li><a href="#">Aphelion</a></li>
-									<li><a href="#">The Fairy Escape</a></li>
 									<li><a href="#">The Witchcat Adventure</a></li>
+									<li><a href="#">The Fairy Escape</a></li>
 									<li><a href="#">Swarm</a></li>
 								</ul>
 							</li>
 							<li>
 								<a href="#" class="icon fa-cog"><span>Systems</span></a>
 								<ul>
-									<li><a href="#">Component System</a></li>
+									<li><a href="ComponentSystem">Component System</a></li>
 									<li><a href="AbilitySystem">Ability System</a></li>
-									<li><a href="#">Network System</a></li>
-									<li><a href="#">Avatar of Raboni</a></li>
+									<li><a href="AoR">Avatar of Raboni</a></li>
 								</ul>
 							</li>
 							<li><a class="icon fa-user" href="about"><span>About</span></a></li>
@@ -63,17 +62,19 @@
 							<header>
 								<h2>Component System</h2>
 							</header>
+							<p class="centered">This component system have currently been used in 3 games and gone through several itterations.<br/>
+							I'm going to go through how it works and why I <a href="#UserExperience">rewrote</a> a big part of it between the first and second game.</p>
 							
 							<div class="divide"></div>
 							<div class="left">
-								<span class="image left"><img class="myImg" src="images/ComponentSystemStructs.png" alt="" /></span>
-								<span class="image left"><img class="myImg" src="images/ComponentSystemFunctions.png" alt="" /></span>
-								<span class="image left"><img class="myImg" src="images/ComponentSystemCreation.png" alt="" /></span>
-								<span class="image left"><img class="myImg" src="images/ComponentSystemMembers.png" alt="" /></span>
-								<span class="image left"><img class="myImg" src="images/ComponentSystemPostMaster.png" alt="" /></span>
-								<span class="image left"><img class="myImg" src="images/ComponentSystemUpdate.png" alt="" /></span>
+								<span class="image left"><img class="myImg" src="images/ComponentSystemStructs.png" alt="Type info and component info" /></span>
+								<span class="image left"><img class="myImg" src="images/ComponentSystemFunctions.png" alt="ComponentManager" /></span>
+								<span class="image left"><img class="myImg" src="images/ComponentSystemCreation.png" alt="Init and component creation" /></span>
+								<span class="image left"><img class="myImg" src="images/ComponentSystemMembers.png" alt="ComponentManager" /></span>
+								<span class="image left"><img class="myImg" src="images/ComponentSystemPostMaster.png" alt="Post master" /></span>
+								<span class="image left"><img class="myImg" src="images/ComponentSystemUpdate.png" alt="ComponentManager update" /></span>
 							</div>
-							<h3>Structure</h3>
+							<h3 id="Structure">Structure</h3>
 							<p>When I decided to make a component system I knew only that I wanted a single array of components, and that I wanted objectIDs rather than an object class.<br/>
 							It took a couple of days to figure out how I wanted the structure and how I would make it, but after I figured out how it only took a couple more days until it was ready to be used.<br/>
 							The system consists of the manager, the post master and components.
@@ -84,7 +85,7 @@
 							therefore I could probably now remove the post master and replace ReceiveMessage with OnActivate, OnDeactivate, etc.</p>
 							
 							<div class="divide"></div>
-							<span class="image right"><img class="myImg" src="images/Component.png" alt="" /></span>
+							<span class="image right"><img class="myImg" src="images/Component.png" alt="Component base class" /></span>
 							<h3>Components</h3>
 							<p>All components are derived from the component base class, and should never be created by anyone other than a ComponentManager.
 							The base class contains its component ID, its objects ID, if it's active or not and a proxy for the ComponentManager that created it.</p>
@@ -92,7 +93,7 @@
 							<div class="divide"></div>
 							<span class="image left"><img class="myImg" src="images/ComponentSystemFunctions.png" alt="" /></span>
 							<h3 id="UserExperience">User Experience</h3>
-							<p>Stuff about taking unitys templated functions and deactivating object instead of all components.</p>
+							<p>Stuff about taking unitys templated functions and deactivating object instead of all components. Also ActivateObject.</p>
 							
 							<div class="divide"></div>
 							<span class="image right"><img class="myImg" src="images/Component.png" alt="" /></span>
