@@ -243,6 +243,14 @@ input, select, textarea {
 		margin: 0 auto;
 		width: 50%;
 	}
+	.small
+	{
+		width: 28%;
+	}
+	.big
+	{
+		width: 70%;
+	}
 
 /* Container */
 
