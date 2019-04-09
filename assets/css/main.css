@@ -226,6 +226,7 @@ input, select, textarea {
 		height: 100%;
 	}
 	
+/*Div class*/
 	.left
 	{
 		float: left;
@@ -256,6 +257,37 @@ input, select, textarea {
 	.big
 	{
 		width: 70%;
+	}
+	
+	@media screen and (max-width: 1680px)
+	{
+	}
+	@media screen and (max-width: 1280px)
+	{
+	}
+	@media screen and (max-width: 980px)
+	{
+		.left
+		{
+			float: none;
+			margin: 2% auto 2% auto;
+		}
+		.right
+		{
+			float: none;
+			margin: 2% auto 2% auto;
+		}
+	}
+	@media screen and (max-width: 736px)
+	{
+		.left
+		{
+			float: none;
+		}
+		.right
+		{
+			float: none;
+		}
 	}
 
 /* Container */
