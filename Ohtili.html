@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<!--
+	Strongly Typed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Robin Ericsson - Ohtili's Ascension</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+				<!--<span class="close">&times;</span>-->
+				<img class="modal-content" id="img01">
+				<div id="caption"></div>
+			</div>
+			
+			<!-- Header -->
+			<section id="header">
+				<div class="container">
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li>
+								<a href="#" class="icon fa-play-circle-o"><span>Games</span></a>
+								<ul>
+									<li><a href="Ohtili">Spite - Ohtili's Ascension</a></li>
+									<li><a href="#">Aphelion</a></li>
+									<li><a href="#">The Witchcat Adventure</a></li>
+									<li><a href="#">The Fairy Escape</a></li>
+									<li><a href="Swarm">Swarm</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" class="icon fa-cog"><span>Systems</span></a>
+								<ul>
+									<li><a href="ComponentSystem">Component System</a></li>
+									<li><a href="AbilitySystem">Ability System</a></li>
+									<li><a href="AoR">Avatar of Raboni</a></li>
+								</ul>
+							</li>
+							<li><a class="icon fa-user" href="About"><span>About</span></a></li>
+						</ul>
+					</nav>
+					<!-- Logo -->
+					<h1 id="logo"><a href="./">Robin Ericsson</a></h1>
+					<p>Gameplay/System Programmer</p>
+				</div>
+			</section>
+
+			<!-- Main -->
+			<section id="main">
+				<div class="container">
+					<div id="content">
+						<!-- Post -->
+						<article class="box post">
+							<header>
+								<h2>Spite - Ohtili's Ascension</h2>
+							</header>
+							<p class="centered">A top-down action RPG.</p>
+							
+							<div class="video left">
+								<iframe src="https://www.youtube.com/embed/doYBCagF0Tc"></iframe>
+							</div>
+							<div class="right">
+							<h3>Main Contributions</h3>
+							<ul>
+								<li>Creating a skill tree system</li>
+								<li>Code abilities</li>
+								<li><a href="ComponentSystem#UserExperience">Rewriting component system</a></li>
+								<li><a href="ComponentSystem#Prefabs">Creating a prefab system for components</a></li>
+								<li>Model streaming</li>
+								<li>Loading screen with animating character</li>
+							</ul>
+							</div>
+							
+							<br class="clear"/>
+							<div class="left">
+								<h3>Team members</h3>
+								<div class="left small">
+									<p><strong>Programmers:</strong><br/>
+									Robin Ericsson<br/>
+									Eric Hilderbrand<br/>
+									Daniel Aladics<br/>
+									Kasper Anderson<br/>
+									Sofie Palén<br/>
+									Emma Göransson<br/>
+									Lukas Hull</p>
+								</div>
+								<div class="right small">
+									<p><strong>Artists:</strong><br/>
+									Andreas Cramer<br/>
+									Olof Eneroth<br/>
+									Alina Gromova<br/>
+									Ruben Dahlstrand</p>
+								</div>
+								<div class="right small">
+									<p><strong>Technical Artists:</strong><br/>
+									Jesper Bergman<br/>
+									Anton Lindgren<br/>
+									Joel Rayner</p>
+									<p><strong>Level Designers:</strong><br/>
+									Jesper Börjesson<br/>
+									Gustav Strigenius</p>
+								</div>
+							</div>
+							<div class="right">
+								<h3>Project Details</h3>
+								<div class="left big">
+									<p><strong>Duration:</strong> 10 weeks, 50%<br/>
+									<strong>Team-size:</strong> 16 people<br/>
+									<strong>Genre:</strong> top-down action RPG<br/>
+									<strong>Reference Game:</strong> Diablo 3<br/>
+									<strong>Language:</strong> C++<br/>
+									<strong>Engine:</strong> our own engine using DX11 and PhysX<br/>
+									<strong>Editor:</strong> <a href="https://www.unrealengine.com">Unreal Engine</a></p>
+								</div>
+							</div>
+							
+							<div class="divide"></div>
+							<span class="image right"><img class="myImg" src="images/OhtiliSkillTree.png" alt="Skill tree" /></span>
+							<h3 id="SkillTree">Skill Tree</h3>
+							<p>When we started working on this game, I knew that since it's an RPG, which is my favorite genre, that I wanted to make a skill tree.<br/>
+							I made a system where you create the tree through a json file. You have a lot of options for every node in the tree,
+							like what stats to add/subtract, or how many times you can activate the node and how much the cost will increase for each time.
+							On the code side you can also check stuff like how many times a node has been activated.<br/>
+							We decided to make the skill tree interconnected with the abilities, so every branch has the theme of one of the abilities, with the last node upgrading that ability.</p>
+							
+							<div class="divide"></div>
+							<div class="left">
+								<div class="left">
+									<span class="image"><img class="myImg" src="images/OhtiliSlash.png" alt="Slash" /></span>
+									<p class="centered">Slash</p>
+								</div>
+								<div class="right">
+									<span class="image"><img class="myImg" src="images/OhtiliStab.png" alt="Stab" /></span>
+									<p class="centered">Stab</p>
+								</div>
+							</div>
+							<div class="right">
+								<h3 id="Abilities">Abilities</h3>
+								<p>When I started working on laying out the ground work for the abilities I wanted to make a bigger system,
+								but realized it would take too much time so I ended up just making a system to keep track of cooldowns and mana costs.
+								I did make the system later as my <a href="AbilitySystem">specialization</a>.<br/>
+								Each abilities ended up having some unique code that bloated or broke something unrelated that I had to fix, but was still very fun to work with.
+								Our technical artists and I worked together a lot in this project to make the abilities look and feel good,
+								and I'm very satisfied with how they turned out.</p>
+							</div>
+							<br class="clear"/>
+							<div class="left">
+								<div class="left">
+									<span class="image"><img class="myImg" src="images/OhtiliLeech.png" alt="Leech" /></span>
+									<p class="centered">Leech</p>
+								</div>
+								<div class="right">
+									<span class="image"><img class="myImg" src="images/OhtiliDash.png" alt="Dash" /></span>
+									<p class="centered">Dash</p>
+								</div>
+							</div>
+							<div class="right">
+								<div class="left">
+									<span class="image"><img class="myImg" src="images/OhtiliSpin.png" alt="Fire spin" /></span>
+								<p class="centered">Fire spin</p>
+								</div>
+								<div class="right">
+									<span class="image"><img class="myImg" src="images/OhtiliDeathFromAbove.png" alt="Death from above" /></span>
+									<p class="centered">Death from above</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div id="copyright" class="container">
+					<ul class="links">
+						<li>&copy; Robin Ericsson. All rights reserved.</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</section>
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/modal.js"></script>
+	</body>
+</html>
