@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Robin Ericsson - Ohtili's Ascension</title>
+		<title>Robin Ericsson - Swarm</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -60,22 +60,20 @@
 						<!-- Post -->
 						<article class="box post">
 							<header>
-								<h2>Spite - Ohtili's Ascension</h2>
+								<h2>Swarm</h2>
 							</header>
-							<p class="centered">A top-down action RPG.</p>
+							<p class="centered">A on-rails shooter.</p>
 							
 							<div class="video left">
-								<iframe src="https://www.youtube.com/embed/doYBCagF0Tc"></iframe>
+								<iframe width="560" height="349" src="https://www.youtube.com/embed/j2FhfF5RVBQ"></iframe>
 							</div>
 							<div class="right">
 							<h3>Main Contributions</h3>
 							<ul>
-								<li>Creating a skill tree system</li>
-								<li>Code abilities</li>
-								<li><a href="ComponentSystem#UserExperience">Rewriting component system</a></li>
-								<li><a href="ComponentSystem#Prefabs">Creating a prefab system for components</a></li>
-								<li>Model streaming</li>
-								<li>Loading screen with animating character</li>
+								<li>Convert everything to player space</li>
+								<li>Code player shooting</li>
+								<li><a href="ComponentSystem">Create a component system</a></li>
+								<li>Load and render level of detail models</li>
 							</ul>
 							</div>
 							
@@ -114,62 +112,11 @@
 								<div class="left big">
 									<p><strong>Duration:</strong> 10 weeks, 50%<br/>
 									<strong>Team-size:</strong> 16 people<br/>
-									<strong>Genre:</strong> top-down action RPG<br/>
-									<strong>Reference Game:</strong> Diablo 3<br/>
+									<strong>Genre:</strong> on-rails shooter<br/>
+									<strong>Reference Game:</strong> Aces of the Galaxy<br/>
 									<strong>Language:</strong> C++<br/>
-									<strong>Engine:</strong> our own engine using DX11 and PhysX<br/>
+									<strong>Engine:</strong> our own engine using DX11<br/>
 									<strong>Editor:</strong> <a href="https://www.unrealengine.com">Unreal Engine</a></p>
-								</div>
-							</div>
-							
-							<div class="divide"></div>
-							<span class="image right"><img class="myImg" src="images/OhtiliSkillTree.png" alt="Skill tree" /></span>
-							<h3 id="SkillTree">Skill Tree</h3>
-							<p>When we started working on this game, I knew that since it's an RPG, which is my favorite genre, that I wanted to make a skill tree.<br/>
-							I made a system where you create the tree through a json file. You have a lot of options for every node in the tree,
-							like what stats to add/subtract, or how many times you can activate the node and how much the cost will increase for each time.
-							On the code side you can also check stuff like how many times a node has been activated.<br/>
-							We decided to make the skill tree interconnected with the abilities, so every branch has the theme of one of the abilities, with the last node upgrading that ability.</p>
-							
-							<div class="divide"></div>
-							<div class="left">
-								<div class="left">
-									<span class="image"><img class="myImg" src="images/OhtiliSlash.png" alt="Slash" /></span>
-									<p class="centered">Slash</p>
-								</div>
-								<div class="right">
-									<span class="image"><img class="myImg" src="images/OhtiliStab.png" alt="Stab" /></span>
-									<p class="centered">Stab</p>
-								</div>
-							</div>
-							<div class="right">
-								<h3 id="Abilities">Abilities</h3>
-								<p>When I started working on laying out the ground work for the abilities I wanted to make a bigger system,
-								but realized it would take too much time so I ended up just making a system to keep track of cooldowns and mana costs.
-								I did make the system later as my <a href="AbilitySystem">specialization</a>.<br/>
-								Each abilities ended up having some unique code that bloated or broke something unrelated that I had to fix, but was still very fun to work with.
-								Our technical artists and I worked together a lot in this project to make the abilities look and feel good,
-								and I'm very satisfied with how they turned out.</p>
-							</div>
-							<br class="clear"/>
-							<div class="left">
-								<div class="left">
-									<span class="image"><img class="myImg" src="images/OhtiliLeech.png" alt="Leech" /></span>
-									<p class="centered">Leech</p>
-								</div>
-								<div class="right">
-									<span class="image"><img class="myImg" src="images/OhtiliDash.png" alt="Dash" /></span>
-									<p class="centered">Dash</p>
-								</div>
-							</div>
-							<div class="right">
-								<div class="left">
-									<span class="image"><img class="myImg" src="images/OhtiliSpin.png" alt="Fire spin" /></span>
-								<p class="centered">Fire spin</p>
-								</div>
-								<div class="right">
-									<span class="image"><img class="myImg" src="images/OhtiliDeathFromAbove.png" alt="Death from above" /></span>
-									<p class="centered">Death from above</p>
 								</div>
 							</div>
 						</article>
