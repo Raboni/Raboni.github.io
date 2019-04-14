@@ -15,7 +15,6 @@
 		<div id="page-wrapper">
 			<!-- The Modal -->
 			<div id="myModal" class="modal">
-				<!--<span class="close">&times;</span>-->
 				<img class="modal-content" id="img01">
 				<div id="caption"></div>
 			</div>
@@ -62,42 +61,62 @@
 							I'm going to go through how it works and why I <a href="#UserExperience">rewrote</a> a big part of it when we began working on the second game.</p>
 							
 							<div class="divide"></div>
-							<div class="left">
-								<span class="image left"><img class="myImg" src="images/ComponentSystemStructs.png" alt="Type info and component info" /></span>
-								<span class="image left"><img class="myImg" src="images/ComponentSystemFunctions.png" alt="ComponentManager" /></span>
-								<span class="image left"><img class="myImg" src="images/ComponentSystemCreation.png" alt="Init and component creation" /></span>
-								<span class="image left"><img class="myImg" src="images/ComponentSystemMembers.png" alt="ComponentManager" /></span>
-								<span class="image left"><img class="myImg" src="images/ComponentSystemPostMaster.png" alt="Post master" /></span>
-								<span class="image left"><img class="myImg" src="images/ComponentSystemUpdate.png" alt="ComponentManager update" /></span>
+							<div class="right" id="Structure">
+								<h3>Structure</h3>
+								<p>When I decided to make a component system I knew only that I wanted a single array of components, and that I wanted objectIDs rather than an object class.
+								Also, I wanted to have all components in the array divided by their component type, to be able to update the components in a more predictable order.<br/>
+								It took a couple of days to figure out how I wanted the structure and how I would make it, but after I figured out how it only took a couple more days until it was ready to be used.<br/>
+								The system consists of the manager, the post master and components.
+								At first the manager only had two things, one big chunk of data containing the components, and a list of info about each component type.
+								The type info is used to parse the data in order to use any components inside. Now the manager also handles the objectIDs, has more features and is much more user freindly.<br/>
+								The reason I made a post master was to not search through all components of it's type whenever a component is activated, deactivated, added or released.
+								I later added an array for every object containing the type and index of components added to the object, 
+								therefore I could probably now remove the post master and replace ReceiveMessage with OnActivate, OnDeactivate, etc.</p>
 							</div>
-							<h3 id="Structure">Structure</h3>
-							<p>When I decided to make a component system I knew only that I wanted a single array of components, and that I wanted objectIDs rather than an object class.<br/>
-							It took a couple of days to figure out how I wanted the structure and how I would make it, but after I figured out how it only took a couple more days until it was ready to be used.<br/>
-							The system consists of the manager, the post master and components.
-							At first the manager only had two things, one big chunk of data containing the components, and a list of info about each component type.
-							The type info is used to parse the data in order to use any components inside. Now the manager also handles the objectIDs, has more features and is much more user freindly.<br/>
-							The reason I made a post master was to not search through all components of it's type whenever a component is activated, deactivated, added or released.
-							I later added an array for every object containing the type and index of components added to the object, 
-							therefore I could probably now remove the post master and replace ReceiveMessage with OnActivate, OnDeactivate, etc.</p>
+							<div class="left">
+								<div class="left" style="text-align: center;">
+									<span class="image"><img class="myImg" src="images/ComponentSystemStructs.png" alt="Type info and component info" /></span>
+									Type info and component info
+								</div>
+								<div class="left" style="text-align: center;">
+									<span class="image"><img class="myImg" src="images/ComponentSystemFunctions.png" alt="ComponentManager" /></span>
+									ComponentManager
+								</div>
+								<div class="left" style="text-align: center;">
+									<span class="image"><img class="myImg" src="images/ComponentSystemCreation.png" alt="Init and component creation" /></span>
+									Init and component creation
+								</div>
+								<div class="left" style="text-align: center;">
+									<span class="image"><img class="myImg" src="images/ComponentSystemMembers.png" alt="ComponentManager" /></span>
+									ComponentManager
+								</div>
+								<div class="left" style="text-align: center;">
+									<span class="image"><img class="myImg" src="images/ComponentSystemPostMaster.png" alt="Post master" /></span>
+									Post master
+								</div>
+								<div class="left" style="text-align: center;">
+									<span class="image"><img class="myImg" src="images/ComponentSystemUpdate.png" alt="ComponentManager update" /></span>
+									ComponentManager update
+								</div>
+							</div>
 							
 							<div class="divide"></div>
-							<span class="image right"><img class="myImg" src="images/Component.png" alt="Component base class" /></span>
-							<h3>Components</h3>
-							<p>All components are derived from the component base class, and should never be created by anyone other than a ComponentManager.
-							The base class contains its component ID, its objects ID, if it's active or not and a proxy for the ComponentManager that created it.<br/>
-							Components contains both the functionality and the data it needs, unlike ECSs (Entity Component Systems) that instead seperates the functionality (system) and the data (component).
-							The reason I decided to not make an ECS is mostly because the only component system I've used is the one in <a href="https://unity.com">Unity</a>,
-							which isn't an ECS and I later used it more directly as a reference.</p>
+							<div class="left" id="Components">
+								<h3>Components</h3>
+								<p>All components are derived from the component base class, and should never be created by anyone other than a ComponentManager.
+								The base class contains its component ID, its objects ID, if it's active or not and a proxy for the ComponentManager that created it.<br/>
+								Components contains both the functionality and the data it needs, unlike ECSs (Entity Component Systems) that instead seperates the functionality (system) and the data (component).
+								The reason I decided to not make an ECS is mostly because the only component system I've used is the one in <a href="https://unity.com">Unity</a>,
+								which isn't an ECS and I later used it more directly as a reference.</p>
+							</div>
+							<div class="right" style="text-align: center;">
+								<span class="image"><img class="myImg" src="images/Component.png" alt="Component base class" /></span>
+								Component base class
+							</div>
 							
 							<div class="divide"></div>
-							<div class="left">
-								<span class="image left"><img class="myImg" src="images/ComponentSystemOldManager.png" alt="Old ComponentManager" /></span>
-								<span class="image left"><img class="myImg" src="images/ComponentSystemFunctions.png" alt="New ComponentManager" /></span>
-								<span class="image left"><img class="myImg" src="images/ComponentSystemOldCreation.png" alt="Old component creation" /></span>
-								<span class="image left"><img class="myImg" src="images/ComponentSystemCreation.png" alt="New component creation" /></span>
-							</div>
-							<div class="right">
-								<h3 id="UserExperience">User Experience</h3>
+							<div class="right" id="UserExperience">
+								<h3>User Experience</h3>
 								<p>During the development of the first game using this system, I came to understand that the system wasn't very user friendly,
 								specially how you get other components and add new components, so a big part needed to be rewritten.<br/>
 								When figuring out how I was going to make it more user friendly, I looked at <a href="https://unity.com">Unitys</a> component system as referance.
@@ -109,14 +128,28 @@
 								I also looked at <a href="https://unity.com">Unitys</a> component system when designing other parts of the system,
 								like using a transform component instead of every component having their own transform.</p>
 							</div>
+							<div class="left">
+								<div class="left" style="text-align: center;">
+									<span class="image"><img class="myImg" src="images/ComponentSystemOldManager.png" alt="Old ComponentManager" /></span>
+									Old ComponentManager
+								</div>
+								<div class="left" style="text-align: center;">
+									<span class="image"><img class="myImg" src="images/ComponentSystemFunctions.png" alt="New ComponentManager" /></span>
+									New ComponentManager
+								</div>
+								<div class="left" style="text-align: center;">
+									<span class="image"><img class="myImg" src="images/ComponentSystemOldCreation.png" alt="Old component creation" /></span>
+									Old component creation
+								</div>
+								<div class="left" style="text-align: center;">
+									<span class="image"><img class="myImg" src="images/ComponentSystemCreation.png" alt="New component creation" /></span>
+									New component creation
+								</div>
+							</div>
 							
 							<div class="divide"></div>
-							<div class="right">
-								<span class="image right"><img class="myImg" src="images/PrefabTxt.png" alt=".txt prefab file" /></span>
-								<span class="image right"><img class="myImg" src="images/PrefabJson.png" alt=".json prefab file" /></span>
-							</div>
-							<div class="left">
-								<h3 id="Prefabs">Prefabs</h3>
+							<div class="left" id="Prefabs">
+								<h3>Prefabs</h3>
 								<p>Half way through development of the second game using this system,
 								we were in need of a easy way to create objects with the correct components and correct data in said components, preferbly as fast as possible.
 								So I took a day to design a simple system for it and another day to code it.<br/>
@@ -126,6 +159,16 @@
 								Also, an important part of the prefabs is that they are now generated by the level designers from unreal,
 								which makes it easy for them to just add some models and collision boxes together when they need it.<br/>
 								</p>
+							</div>
+							<div class="right">
+								<div class="left" style="text-align: center;">
+									<span class="image"><img class="myImg" src="images/PrefabTxt.png" alt=".txt prefab file" /></span>
+									Old .txt prefab file
+								</div>
+								<div class="right" style="text-align: center;">
+									<span class="image"><img class="myImg" src="images/PrefabJson.png" alt=".json prefab file" /></span>
+									New .json prefab file
+								</div>
 							</div>
 						</article>
 					</div>
