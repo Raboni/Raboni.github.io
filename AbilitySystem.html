@@ -61,19 +61,24 @@
 							It works by using my <a href="ComponentSystem">component system</a> to create and manipulate components.</p>
 							
 							<div class="divide"></div>
-							<span class="image left"><img class="myImg" src="images/AbilitySystemUpdate.png" alt="" /></span>
-							<h3>Why make an Ability System?</h3>
-							<p>I’ve Always liked making abilities for RPGs,
-							but there is always code you don’t want to copy for most abilities like cooldown, damage, stat scaling and delayed effects.
-							When you try to add these to a game you will encounter many other problems such as canceling a charging ability,
-							and if you use a component system you might want to pre-define what components an ability should create or manipulate.<br/>
-							When I made the abilities in <a href="Ohtili">Spite</a>, even though all abilities were very different,
-							I wanted a system to handle the interface, cooldown and stat scaling for abilities.
-							I started working on a big ability system, but quickly realized it would take too long time to make,
-							so I settled for a simpler system to handle cooldown and casting through callback functions.<br class="clear"/>
-							When I got the chance to finaly make it, I knew wanted to make a big flexible system to handle all types of abilities for all types of games,
-							but I still wanted it to be low level enough to be used specifically by the ones making the components.
-							The reason is that it’s the way I would want to create abilities and I felt that way you get a good sense of over the flow of the code.</p>
+							<div class="right" id="WhyAbilitySystem">
+								<h3>Why make an Ability System?</h3>
+								<p>I’ve Always liked making abilities for RPGs,
+								but there is always code you don’t want to copy for most abilities like cooldown, damage, stat scaling and delayed effects.
+								When you try to add these to a game you will encounter many other problems such as canceling a charging ability,
+								and if you use a component system you might want to pre-define what components an ability should create or manipulate.<br/>
+								When I made the abilities in <a href="Ohtili">Spite</a>, even though all abilities were very different,
+								I wanted a system to handle the interface, cooldown and stat scaling for abilities.
+								I started working on a big ability system, but quickly realized it would take too long time to make,
+								so I settled for a simpler system to handle cooldown and casting through callback functions.<br class="clear"/>
+								When I got the chance to finaly make it, I knew wanted to make a big flexible system to handle all types of abilities for all types of games,
+								but I still wanted it to be low level enough to be used specifically by the ones making the components.
+								The reason is that it’s the way I would want to create abilities and I felt that way you get a good sense of over the flow of the code.</p>
+							</div>
+							<div class="left" style="text-align: center;">
+								<span class="image"><img class="myImg" src="images/AbilitySystemUpdate.png" alt="AbilityManager update" /></span>
+								AbilityManager update
+							</div>
 							
 							<div class="divide"></div>
 							<span class="image right"><img class="myImg" src="images/AbilitySystemUpdate.png" alt="" /></span>
