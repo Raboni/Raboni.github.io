@@ -271,23 +271,41 @@ input, select, textarea {
 		{
 			float: none;
 			margin: 2% auto 2% auto;
+			width: 80%;
 		}
 		.right
 		{
 			float: none;
 			margin: 2% auto 2% auto;
+			width: 80%;
+		}
+		.left .left
+		{
+			float: left;
+			margin: 2%;
+			width: 46%;
+		}
+		.left .right
+		{
+			float: left;
+			margin: 2%;
+			width: 46%;
+		}
+		.right .left
+		{
+			float: right;
+			margin: 2%;
+			width: 46%;
+		}
+		.right .right
+		{
+			float: right;
+			margin: 2%;
+			width: 46%;
 		}
 	}
 	@media screen and (max-width: 736px)
 	{
-		.left
-		{
-			float: none;
-		}
-		.right
-		{
-			float: none;
-		}
 	}
 
 /* Container */
