@@ -61,7 +61,7 @@
 							It works by using my <a href="ComponentSystem">component system</a> to create and manipulate components.</p>
 							
 							<div class="divide"></div>
-							<div class="right" id="WhyAbilitySystem">
+							<div class="right" id="Why">
 								<h3>Why make an Ability System?</h3>
 								<p>I’ve always liked making abilities for RPGs,
 								but there is always code you don’t want to copy for most abilities like cooldown, damage, stat scaling and delayed effects.
@@ -87,7 +87,11 @@
 								During the creation of the system I changed what events I was going to use a couple of times, due to the last one not working as I expected.
 								At first the casting events were the same as the input, press, hold and release that is, but I settled on charge start, charge stop and cast.
 								Every object needs to specify what casting event they should act on.<br/>
-								</p>
+								All three casting events are very different from each other, and therefore are handled in different ways by the system.
+								Charge start has all its components and objects added to special arrays on creation, to be removed when another event is called.
+								Charge stop is basically canceling the charge without casting.
+								Cast is the main event that actually does the ability, but it's also called every upkeep interval.
+								Through these three events and the more complex <a href="OnHit">on hit event</a>, you should be able to make almost every ability or spell in any game.</p>
 							</div>
 							<div class="right" style="text-align: center;">
 								<span class="image"><img class="myImg" src="images/AbilitySystemUpdate.png" alt="" /></span>
