@@ -63,7 +63,7 @@
 							<div class="divide"></div>
 							<div class="right" id="WhyAbilitySystem">
 								<h3>Why make an Ability System?</h3>
-								<p>I’ve Always liked making abilities for RPGs,
+								<p>I’ve always liked making abilities for RPGs,
 								but there is always code you don’t want to copy for most abilities like cooldown, damage, stat scaling and delayed effects.
 								When you try to add these to a game you will encounter many other problems such as canceling a charging ability,
 								and if you use a component system you might want to pre-define what components an ability should create or manipulate.<br/>
@@ -83,7 +83,11 @@
 							<div class="divide"></div>
 							<div class="left" id="CastingEvents">
 								<h3>Casting Events</h3>
-								<p>Coming soon.</p>
+								<p>The ability system is built around the concept of events, and all abilities consists an array of objects, each with an array of component actions (create, remove or custom action).
+								During the creation of the system I changed what events I was going to use a couple of times, due to the last one not working as I expected.
+								At first the casting events were the same as the input, press, hold and release that is, but I settled on charge start, charge stop and cast.
+								Every object needs to specify what casting event they should act on.<br/>
+								</p>
 							</div>
 							<div class="right" style="text-align: center;">
 								<span class="image"><img class="myImg" src="images/AbilitySystemUpdate.png" alt="AbilityManager update" /></span>
