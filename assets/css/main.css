@@ -214,7 +214,7 @@ input, select, textarea {
 	{
 		margin: auto;
 		width: 50%;
-		height: calc(40vw * 0.5625);
+		height: calc((100vw - (100vw - 68em)) * 0.5 * 0.5625);
 	}
 	video
 	{
@@ -247,7 +247,7 @@ input, select, textarea {
 	}
 	.center
 	{
-		margin: 0 auto;
+		margin: 2% auto 2% auto;
 		width: 50%;
 	}
 	.small
@@ -303,9 +303,18 @@ input, select, textarea {
 			margin: 2%;
 			width: 46%;
 		}
+		
+		.video.left
+		{
+			height: calc((100vw * 0.96 - 100px) * 0.5625);
+		}
 	}
 	@media screen and (max-width: 736px)
 	{
+		.video.left
+		{
+			height: calc((100vw * 0.96 - 40px) * 0.5625);
+		}
 	}
 
 /* Container */
