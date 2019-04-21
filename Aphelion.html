@@ -30,6 +30,7 @@
 								<a href="#" class="icon fa-play-circle-o"><span>Games</span></a>
 								<ul>
 									<li><a href="Ohtili">Spite - Ohtili's Ascension</a></li>
+									<li><a href="Aphelion">Aphelion</a></li>
 									<li><a href="Swarm">Swarm</a></li>
 									<li><a href="Witchcat">The Witchcat Adventure</a></li>
 									<li><a href="FairyEscape">The Fairy Escape</a></li>
@@ -43,7 +44,7 @@
 									<li><a href="AbilitySystem">Ability System</a></li>
 								</ul>
 							</li>
-							<li><a class="icon fa-user" href="About"><span>About</span></a></li>
+							<li><a class="icon fa-user" href="About"><span>About Me</span></a></li>
 						</ul>
 					</nav>
 					<!-- Logo -->
@@ -64,12 +65,12 @@
 							<p class="centered">A story driven first-person shooter.</p>
 							
 							<div class="video left">
-								<iframe src="https://www.youtube.com/embed/"></iframe>
+								<iframe src="https://www.youtube.com/embed/mmK07yR5xEE"></iframe>
 							</div>
 							<div class="right">
 							<h3>Main Contributions</h3>
 							<ul>
-								<li><a href="#SeemlessLoading">Seemless loading screen</a></li>
+								<li><a href="#SeemlessLoading">Seemless loading</a></li>
 								<li><a href="ComponentSystem">Maintaining component system</a></li>
 								<li>Created the network system</li>
 								<li>Coding unlockable automatic doors</li>
@@ -78,35 +79,6 @@
 							</div>
 							
 							<br class="clear"/>
-							<!--<div class="left">
-								<h3>Team members</h3>
-								<div class="left small">
-									<p><strong>Programmers:</strong><br/>
-									Robin Ericsson<br/>
-									Eric Hilderbrand<br/>
-									Daniel Aladics<br/>
-									Kasper Anderson<br/>
-									Sofie Palén<br/>
-									Emma Göransson<br/>
-									Lukas Hull</p>
-								</div>
-								<div class="right small">
-									<p><strong>Artists:</strong><br/>
-									Andreas Cramer<br/>
-									Olof Eneroth<br/>
-									Alina Gromova<br/>
-									Ruben Dahlstrand</p>
-								</div>
-								<div class="right small">
-									<p><strong>Technical Artists:</strong><br/>
-									Jesper Bergman<br/>
-									Anton Lindgren<br/>
-									Joel Rayner</p>
-									<p><strong>Level Designers:</strong><br/>
-									Jesper Börjesson<br/>
-									Gustav Strigenius</p>
-								</div>
-							</div>-->
 							<div class="left">
 								<h3>Project Details</h3>
 								<p><strong>Duration:</strong> 10 weeks, half-time<br/>
@@ -120,12 +92,23 @@
 							
 							<div class="divide"></div>
 							<div class="left" id="SeemlessLoading">
-								<h3>Seemless Loading Screen</h3>
-								<p>Coming soon.</p>
+								<h3>Seemless Loading</h3>
+								<p>The most interesting thing I did in this project was making loading almost seemless.
+								I didn't do it because it was required by the game, but rather that I was interested in it and had thought of a way to do it.<br/>
+								We had decided to have the the game load while the player rides an elevator,
+								and thats when I came up with the idea to teleport the player to an identical elevator that never unloads while the next level is loading,
+								to later be teleported to the elevator in the new level.
+								The intermediate elevator needs to never be unloaded since that way the double-buffered rendering thread won't crash because it's trying to render something that was unloaded the last frame.<br/>
+								A few problems still showed up, like the fact that you cannot simulate physX while loading new objects.
+								That problem was even bigger considering the player used the character collider to move, but in the end I mostly solved it.<br/>
+								I had one big problem I couldn't solve, the lighting.
+								The lighting had the same problem as most other things, it can't be used while loading,
+								but unlike everything else the cubemap effects every object and changes between levels.<br/>
+								In the end you can run, jump and shoot while loading the next level, but it didn't end up as seemless as I wanted it.</p>
 							</div>
 							<div class="right" style="text-align: center;">
-								<span class="image"><img class="myImg" src="images/OhtiliSkillTree.png" alt="" /></span>
-								Temp
+								<span class="image"><img class="myImg" src="images/AphelionElevator.gif" alt="Loading in elevator" /></span>
+								Loading in elevator
 							</div>
 						</article>
 					</div>
